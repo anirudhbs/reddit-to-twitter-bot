@@ -1,0 +1,27 @@
+{
+  "name": "reddit-to-twitter-bot",
+  "version": "1.0.0",
+  "description": "Shares images of reddit posts on Twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anirudhbs/reddit-to-twitter-bot.git"
+  },
+  "keywords": [
+    "reddit",
+    "twitter",
+    "twitter-bot"
+  ],
+  "author": "Anirudh B S",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anirudhbs/reddit-to-twitter-bot/issues"
+  },
+  "homepage": "https://github.com/anirudhbs/reddit-to-twitter-bot#readme",
+  "dependencies": {
+    "node-schedule": "^1.2.5"
+  }
+}
