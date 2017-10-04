@@ -1,27 +1,34 @@
 const fs = require('fs')
 const async = require('async')
-const axios = require('axios')
+const fetch = require('node-fetch')
 
 const fetchAndPost = async function () {
-  const url = 'https://www.reddit.com/r/pics/top/.json?sort=top&t=day&limit=5'
-  const response = await axios.get(url)
-  let content = response.data.data.children
+  const url = 'https://www.reddit.com/r/pics/top/.json?sort=top&t=day&limit=3'
+  const response = await getResponse(url)
+  const content = response.data.children
 
   await Promise.all(
     content.map(async function (current) {
       let post = current.data
+      let postName = post.id
       let imageUrl = post.preview.images[0].source.url
-      let imageResponse = await axios({
-        method: 'get',
-        url: imageUrl,
-        responseType: 'arraybuffer'
-      })
-      let buffer = new Buffer(imageResponse.data)
-      let filename = `${post.id}.jpg`
-      fs.writeFileSync(`images/${filename}`, buffer)
+      await getImage(imageUrl, postName)
       console.log(`${post.title}`)
     })
   )
 }
 
+const getResponse = async function (url) {
+  let response = await fetch(url)
+    .then(res => res.json())
+  return response
+}
+
+const getImage = async function (url, name) {
+  await fetch(url)
+    .then(res => {
+      let file = fs.createWriteStream(`images/${name}.jpg`)
+      res.body.pipe(file)
+    })
+}
 module.exports = fetchAndPost()
