@@ -1,6 +1,6 @@
 const fs = require('fs')
-const async = require('async')
 const fetch = require('node-fetch')
+const async = require('async')
 
 const fetchAndPost = async function () {
   const url = 'https://www.reddit.com/r/pics/top/.json?sort=top&t=day&limit=3'
@@ -10,9 +10,8 @@ const fetchAndPost = async function () {
   await Promise.all(
     content.map(async function (current) {
       let post = current.data
-      let postName = post.id
       let imageUrl = post.preview.images[0].source.url
-      await getImage(imageUrl, postName)
+      await getImage(imageUrl, post.id)
       console.log(`${post.title}`)
     })
   )
@@ -31,4 +30,5 @@ const getImage = async function (url, name) {
       res.body.pipe(file)
     })
 }
+
 module.exports = fetchAndPost()
