@@ -1,6 +1,5 @@
 const fs = require('fs')
 const https = require('https')
-const async = require('async')
 const stream = require('stream')
 
 const getResponse = new Promise(function (resolve, reject) {
@@ -16,9 +15,9 @@ const getResponse = new Promise(function (resolve, reject) {
       })
     })
   })
-  .then(async function (res) {
+  .then(function (res) {
     const content = res
-    await Promise.all(
+    Promise.all(
       content.map(function (current) {
         let post = current.data
         let imageUrl = post.preview.images[0].source.url
