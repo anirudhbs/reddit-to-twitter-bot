@@ -1,22 +1,33 @@
-const fs = require('fs')
 const https = require('https')
-const fetch = require('node-fetch')
+const url = 'https://www.reddit.com/r/pics/top/.json?sort=top&t=day&limit=3'
 const async = require('async')
+const fetch = require('node-fetch')
+const fs = require('fs')
 
-const fetchAndPost = async function () {
-  const url = 'https://www.reddit.com/r/pics/top/.json?sort=top&t=day&limit=3'
-  const response = await getResponse(url)
-  const content = response.data.children
-
-  await Promise.all(
-    content.map(async function (current) {
-      let post = current.data
-      let imageUrl = post.preview.images[0].source.url
-      await getImage(imageUrl, post.id)
-      console.log(`${post.title}`)
+const getResponse = new Promise(function (resolve, reject) {
+    https.get(url, (res) => {
+      let data = ''
+      res.on('data', (chunk) => {
+        data += chunk
+      })
+      res.on('end', () => {
+        console.log('end')
+        temp = JSON.parse(data).data.children
+        resolve(temp)
+      })
     })
-  )
-}
+  })
+  .then(async function (res) {
+    const content = res
+    await Promise.all(
+      content.map(async function (current) {
+        let post = current.data
+        let imageUrl = post.preview.images[0].source.url
+        await getImage(imageUrl, post.id)
+        console.log(`${post.title}`)
+      })
+    )
+  })
 
 const getImage = async function (url, name) {
   await fetch(url)
@@ -25,5 +36,3 @@ const getImage = async function (url, name) {
       res.body.pipe(file)
     })
 }
-
-module.exports = fetchAndPost()
