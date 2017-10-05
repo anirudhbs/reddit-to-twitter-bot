@@ -1,4 +1,5 @@
 const fs = require('fs')
+const https = require('https')
 const fetch = require('node-fetch')
 const async = require('async')
 
@@ -15,12 +16,6 @@ const fetchAndPost = async function () {
       console.log(`${post.title}`)
     })
   )
-}
-
-const getResponse = async function (url) {
-  let response = await fetch(url)
-    .then(res => res.json())
-  return response
 }
 
 const getImage = async function (url, name) {
