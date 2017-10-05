@@ -4,7 +4,7 @@
   "description": "Shares images of reddit posts on Twitter",
   "main": "index.js",
   "scripts": {
-    "test": "npm start"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/anirudhbs/reddit-to-twitter-bot#readme",
   "dependencies": {
+    "node-fetch": "^1.7.3",
     "node-schedule": "^1.2.5"
   }
 }
