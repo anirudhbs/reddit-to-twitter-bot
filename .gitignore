@@ -1,3 +1,6 @@
 node_modules/
 package-lock.json
+credentials.json
+test.js
 *.jpg
+config.js
