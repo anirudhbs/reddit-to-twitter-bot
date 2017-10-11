@@ -1,7 +1,7 @@
 # reddit-to-twitter-bot
 Shares images of Reddit posts on Twitter
 
-##Running the bot
+## Running the bot
 
 ```
 npm start
@@ -15,7 +15,7 @@ twitter
 node-schedule
 ```
 
-###Configuration
+### Configuration
 
 Setting up the bot has to be done in the config/config.js file
 Twitter tokens can be obtained [here](https://apps.twitter.com/)
