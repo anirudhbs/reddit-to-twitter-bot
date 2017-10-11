@@ -5,10 +5,11 @@ const schedule = require('node-schedule'),
 
 let rule = new schedule.RecurrenceRule()
 rule.minute = 31
-let subreddits = Reddit.subreddit.join('+')
-const redditUrl = `https://www.reddit.com/r/${subreddits}/rising/.json?limit=${Reddit.limit}`
+let subreddits = Reddit.subreddit.join('+'),
+  redditUrl = `https://www.reddit.com/r/${subreddits}/rising/.json?limit=${Reddit.limit}`
+
 console.log('Running...')
-tweet.getContent(redditUrl, tweet.createFolder)
+tweet.getContent(redditUrl, tweet.filterContent)
 // schedule.scheduleJob(rule, () => {
-//   tweet.getContent(redditUrl, tweet.downloadImages)
+//   tweet.getContent(redditUrl, tweet.filterContent)
 // })
