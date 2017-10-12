@@ -1,5 +1,6 @@
 # reddit-to-twitter-bot
-Shares images of Reddit posts on Twitter
+Share images posted on Reddit on Twitter  
+Currently supports posts that directly link to `jpg`, `png` images
 
 ## Running the bot
 
@@ -17,7 +18,7 @@ node-schedule
 
 ### Configuration
 
-Setting up the bot has to be done in the config/config.js file
+Setting up the bot has to be done in the config/config.js file  
 Twitter tokens can be obtained [here](https://apps.twitter.com/)
 
 ```
