@@ -1,12 +1,7 @@
-const schedule = require('node-schedule'),
-  tweet = require('./lib/tweet.js')
-
-let rule = new schedule.RecurrenceRule()
-rule.minute = 31
+const tweet = require('./lib/tweet.js')
 
 console.log('Running...')
 tweet.run()
-
-// schedule.scheduleJob(rule, () => {
-//  tweet.run()
-// })
+// setInterval(function () {
+//   tweet.run()
+// }, 20 * 60 * 1000) //20 min interval
