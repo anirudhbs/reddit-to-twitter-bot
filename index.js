@@ -1,6 +1,5 @@
 const schedule = require('node-schedule'),
-  tweet = require('./lib/tweet.js'),
-  config = require('./config/config.js')
+  tweet = require('./lib/tweet.js')
 
 let rule = new schedule.RecurrenceRule()
 rule.minute = 31
