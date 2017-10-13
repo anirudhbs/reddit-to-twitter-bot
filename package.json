@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/anirudhbs/reddit-to-twitter-bot#readme",
   "dependencies": {
-    "twitter": "^1.7.1",
-    "node-schedule": "^1.2.5"
+    "twitter": "^1.7.1"
   }
 }

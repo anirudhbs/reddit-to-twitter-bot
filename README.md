@@ -1,6 +1,6 @@
 # reddit-to-twitter-bot
 Share images posted on Reddit on Twitter  
-Currently supports posts that directly link to `jpg`, `png` images
+Currently supports posts that directly link to `jpg` `png` images
 
 ## Running the bot
 
