@@ -10,10 +10,12 @@ npm start
 
 ### Prerequisites
 
-The following npm packages are needed to run this.
+The following npm packages are needed to run this
+- twitter  
+
+Install the dependencies using the command
 ```
-twitter
-node-schedule
+npm install
 ```
 
 ### Configuration
