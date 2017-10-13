@@ -23,5 +23,9 @@
   "homepage": "https://github.com/anirudhbs/reddit-to-twitter-bot#readme",
   "dependencies": {
     "twitter": "^1.7.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
 }
