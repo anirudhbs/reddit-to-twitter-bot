@@ -1,0 +1,15 @@
+{
+  "twitterKeys": {
+    "consumer_key": "BCYMwbrGk7wMAaq2rKQrzpYXq",
+    "consumer_secret": "ehE7fTN2T975anLxHERBkQmgiGmNPFpfldSClpGjuCFai7E2Fx",
+    "access_token_key": "915084068403818502-LdCtmAUwu44shBaooMiiaSOtS9wFUjj",
+    "access_token_secret": "OzBFrGINCKkHdDZ4GJ17uJn3cvSdVgh2cpgCYm0qOxYWY"
+  },
+  "reddit": {
+    "subreddit": ["me_irl", "2meirl4meirl", "BlackPeopleTwitter", "BikiniBottomTwitter",
+      "DeepFriedMemes", "dankmemes", "dankchristianmemes", "indianpeoplefacebook",
+      "meirl", "memes", "starterpacks", "wholesomememes", "whothefuckup"
+    ],
+    "limit": 100
+  }
+}
