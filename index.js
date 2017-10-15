@@ -4,4 +4,4 @@ console.log('Running...')
 tweet.run()
 setInterval(function () {
   tweet.run()
-}, 20 * 60 * 1000) //20 min interval
+}, 1 * 60 * 60 * 1000) //1 hr interval
