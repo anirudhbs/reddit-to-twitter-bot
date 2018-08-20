@@ -1,38 +1,18 @@
-# reddit-to-twitter-bot
-Share images posted on Reddit on Twitter  
-Currently supports posts that directly link to `jpg` `png` images
+# Reddit to Twitter bot
 
-## Running the bot
+Share images posted on Reddit to Twitter  
 
+## Steps to get the project running
+
+* Add a `.env` file to the root of the project
 ```
-npm start
-```
-
-### Prerequisites
-
-The following npm packages are needed to run this
-- twitter  
-
-Install the dependencies using the command
-```
-npm install
+CONSUMER_KEY=
+CONSUMER_SECRET=
+ACCESS_TOKEN=
+ACCESS_SECRET=
+SUBREDDITS= <subreddit names separated by a +>
+LIMIT= <number of posts to be fetched from reddit each time>
 ```
 
-### Configuration
-
-Setting up the bot has to be done in the config/config.js file  
-Twitter tokens can be obtained [here](https://apps.twitter.com/)
-
-```
-consumer_key: '',
-consumer_secret: '',
-access_token_key: '',
-access_token_secret: ''
-
-subreddit: ['', ''],
-limit: 10
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* Twitter tokens can be obtained [here](https://apps.twitter.com/)
+* Run the project locally using `npm run start`

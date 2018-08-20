@@ -1,5 +1,3 @@
 node_modules/
-*.jpg
-*.png
-*.json
-test.js
+.env
+.todo
